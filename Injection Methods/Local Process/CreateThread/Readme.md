@@ -16,3 +16,15 @@ HANDLE CreateThread(
 ```
 
 The most important parameter related to this API call is **lpStartAddress**. This parameter provides the shellcodes location in memory where the it will begin reading and executing the instructions. No other parameters are necessary to execute the shellcode.
+
+### Debugging
+
+A new thread is spawned with the ID 28088 which has been assigned the base address of the shellcode as an entry point. This thread is executing the shellcode. 
+
+> [!IMPORTANT]
+> This exposes the base address of the shellcode in the **Entry** field which is an issue from an opsec perspective.
+
+<p align=center>
+  <img src=data/threads.png></img>
+</p>
+

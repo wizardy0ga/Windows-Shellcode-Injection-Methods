@@ -34,6 +34,8 @@ int main() {
 		return -1;
 	}
 
+	printf("Created new thread (%d) starting at 0x%p\n", ThreadId, shellcode);
+
 	/* Wait for the thread to finish before exiting this process */
 	WaitForSingleObject(hThread, INFINITE);
 

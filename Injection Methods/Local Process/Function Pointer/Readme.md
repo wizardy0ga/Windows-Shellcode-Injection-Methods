@@ -67,5 +67,5 @@ Since this is metasploit shellcode, it can be verified by the first 6 bytes whic
 
 <p align=center>
 	<img src=data/debugger.png></img>
-	<h6 align=center>Figure 3: Breaking execution after **rax** is assigned the address of the shellcode</p>
+	<h6 align=center>Figure 3: Breaking execution after rax is assigned the address of the shellcode</p>
 </p>

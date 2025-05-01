@@ -49,9 +49,8 @@ The load effective address (lea) instruction sets the value of **rax** to the ba
 
 <p align=center>
 	<img src=data/disassembly.png></img>
+	<h6 align=center>Figure 1: Disassembly of main() in main.c</h6>
 </p>
-
-###### Figure 1: Disassembly of main() in [main.c](main.c)
 
 ### Debugging 
 
@@ -59,9 +58,8 @@ The shellcode has been stored at the address **0x7FF74B271000** which is the beg
 
 <p align=center>
 	<img src=data/memory_map.png></img>
+	<h6 align=center>Figure 2: Memory map highlighting the .text section base address</h6>
 </p>
-
-###### Figure 2: Memory map highlighting the .text section base address
 
 **rax** is set to the base address of the shellcode, **0x7FF74B271000**. The call instruction will execute the shellcode by setting **rip** to **0x7FF74B271000** where execution will continue.
 
@@ -69,6 +67,5 @@ Since this is metasploit shellcode, it can be verified by the first 6 bytes whic
 
 <p align=center>
 	<img src=data/debugger.png></img>
+	<h6 align=center>Figure 3: Breaking execution after **rax** is assigned the address of the shellcode</p>
 </p>
-
-###### Figure 3: Breaking execution after **rax** is assigned the address of the shellcode

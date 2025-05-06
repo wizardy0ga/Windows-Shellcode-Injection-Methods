@@ -11,6 +11,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Function Pointer", "Injecti
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CreateThread", "Injection Methods\Local Process\CreateThread\data\CreateThread.vcxproj", "{182E5CCF-45F5-4209-B1CD-54F5374AE93F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Thread Hijacking", "Thread Hijacking", "{BBD1FF34-E4B6-45A0-AF67-EEB188AE1957}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Creation", "Injection Methods\Local Process\Thread Hijacking\Creation\data\Creation.vcxproj", "{7F7E5A58-900D-4E1A-AE01-EEB57EB51CD6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Release|x64 = Release|x64
@@ -25,6 +29,10 @@ Global
 		{182E5CCF-45F5-4209-B1CD-54F5374AE93F}.Release|x64.Build.0 = Release|x64
 		{182E5CCF-45F5-4209-B1CD-54F5374AE93F}.Release|x86.ActiveCfg = Release|Win32
 		{182E5CCF-45F5-4209-B1CD-54F5374AE93F}.Release|x86.Build.0 = Release|Win32
+		{7F7E5A58-900D-4E1A-AE01-EEB57EB51CD6}.Release|x64.ActiveCfg = Release|x64
+		{7F7E5A58-900D-4E1A-AE01-EEB57EB51CD6}.Release|x64.Build.0 = Release|x64
+		{7F7E5A58-900D-4E1A-AE01-EEB57EB51CD6}.Release|x86.ActiveCfg = Release|Win32
+		{7F7E5A58-900D-4E1A-AE01-EEB57EB51CD6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,5 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{3CBF126D-41D0-4AC9-AD1F-FD5177E61D35} = {5152BD62-9343-41C1-A008-0AE2A4514114}
 		{182E5CCF-45F5-4209-B1CD-54F5374AE93F} = {5152BD62-9343-41C1-A008-0AE2A4514114}
+		{BBD1FF34-E4B6-45A0-AF67-EEB188AE1957} = {5152BD62-9343-41C1-A008-0AE2A4514114}
+		{7F7E5A58-900D-4E1A-AE01-EEB57EB51CD6} = {BBD1FF34-E4B6-45A0-AF67-EEB188AE1957}
 	EndGlobalSection
 EndGlobal

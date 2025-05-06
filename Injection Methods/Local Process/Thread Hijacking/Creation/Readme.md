@@ -33,7 +33,7 @@ ResumeThread will instruct the thread to lift the suspension and resume executio
 
 A suspended thread is created with the id **11384** and the threads register context is acquired. Rip is set to the base address of the shellcode **0x7FF656011000** and the new context is applied to the thread. When the thread resumes execution, the shellcode executes. 
 
-> ![IMPORTANT]
+> [!IMPORTANT]
 > Notice that the **Entry** field of the thread is pointing to our shellcode.
 
 <p align=center>

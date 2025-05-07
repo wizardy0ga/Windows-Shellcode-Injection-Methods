@@ -39,5 +39,7 @@ int main() {
 	/* Wait for the thread to finish before exiting this process */
 	WaitForSingleObject(hThread, INFINITE);
 
+	CloseHandle(hThread);
+
 	return 0;
 }

@@ -85,7 +85,11 @@ int main() {
 	/* Resume the thread to execute the shellcode & wait for completion */
 	ResumeThread(hThread);
 	printf("Resumed execution in thread (%d)\n", ThreadId);
+	
+	/* Wait for thread to finish execution */
 	WaitForSingleObject(hThread, INFINITE);
+
+	CloseHandle(hThread);
 
 	return 0;
 }

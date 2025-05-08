@@ -69,6 +69,7 @@ int main() {
 
 	/* Capture the current register values in the CONTEXT structure*/
 	if (!GetThreadContext(hThread, &Ctx)) {
+		CloseHandle(hThread);
 		exit("Couldn't acquire the threads context.");
 	}
 
@@ -79,11 +80,15 @@ int main() {
 	
 	/* Push the new register value to the thread*/
 	if (!SetThreadContext(hThread, &Ctx)) {
+		CloseHandle(hThread);
 		exit("Could not set the new context on the thread.");
 	}
 
 	/* Resume the thread to execute the shellcode & wait for completion */
-	ResumeThread(hThread);
+	if ((ResumeThread(hThread)) == -1) {
+		CloseHandle(hThread);
+		exit("Couldn't resume the thread.\n");
+	}
 	printf("Resumed execution in thread (%d)\n", ThreadId);
 	
 	/* Wait for thread to finish execution */

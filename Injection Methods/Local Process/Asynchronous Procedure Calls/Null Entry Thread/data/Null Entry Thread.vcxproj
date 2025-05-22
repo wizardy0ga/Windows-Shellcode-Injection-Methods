@@ -24,7 +24,7 @@
     <ProjectGuid>{c3fb25fd-61ee-4c59-92e4-e1872bbb4e3d}</ProjectGuid>
     <RootNamespace>QueueUserAPC</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Null Thread</ProjectName>
+    <ProjectName>Null Thread Entry</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

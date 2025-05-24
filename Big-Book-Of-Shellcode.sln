@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Null Entry Thread", "Inject
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Alertable Thread", "Injection Methods\Local Process\Asynchronous Procedure Calls\Alertable Thread\data\Alertable Thread.vcxproj", "{6060707A-4D2F-45EA-B26F-B3F69A92252F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CreateRemoteThread", "Injection Methods\Remote Process\CreateRemoteThread\data\CreateRemoteThread.vcxproj", "{FBD5CA88-0DFC-4D26-9662-82E84A1620B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Release|x64 = Release|x64
@@ -53,6 +55,10 @@ Global
 		{6060707A-4D2F-45EA-B26F-B3F69A92252F}.Release|x64.Build.0 = Release|x64
 		{6060707A-4D2F-45EA-B26F-B3F69A92252F}.Release|x86.ActiveCfg = Release|Win32
 		{6060707A-4D2F-45EA-B26F-B3F69A92252F}.Release|x86.Build.0 = Release|Win32
+		{FBD5CA88-0DFC-4D26-9662-82E84A1620B5}.Release|x64.ActiveCfg = Release|x64
+		{FBD5CA88-0DFC-4D26-9662-82E84A1620B5}.Release|x64.Build.0 = Release|x64
+		{FBD5CA88-0DFC-4D26-9662-82E84A1620B5}.Release|x86.ActiveCfg = Release|Win32
+		{FBD5CA88-0DFC-4D26-9662-82E84A1620B5}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,5 +72,6 @@ Global
 		{08DFF86B-19D7-4EDD-9A48-C8348D02D838} = {5152BD62-9343-41C1-A008-0AE2A4514114}
 		{C3FB25FD-61EE-4C59-92E4-E1872BBB4E3D} = {08DFF86B-19D7-4EDD-9A48-C8348D02D838}
 		{6060707A-4D2F-45EA-B26F-B3F69A92252F} = {08DFF86B-19D7-4EDD-9A48-C8348D02D838}
+		{FBD5CA88-0DFC-4D26-9662-82E84A1620B5} = {269CB137-AECD-412D-A16A-D27848560584}
 	EndGlobalSection
 EndGlobal

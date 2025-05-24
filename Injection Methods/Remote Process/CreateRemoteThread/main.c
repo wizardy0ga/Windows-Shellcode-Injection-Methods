@@ -84,7 +84,7 @@ int main(int argc, char* argv[]) {
 	}
 
 	/* Get a handle to the target process */
-	if ( (hTargetProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, dwPid)) == NULL ) {
+	if ( (hTargetProcess = OpenProcess(PROCESS_VM_OPERATION | PROCESS_VM_READ | PROCESS_VM_WRITE, FALSE, dwPid)) == NULL ) {
 		exit("Could not open handle to target process.");
 	}
 

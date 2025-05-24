@@ -84,12 +84,12 @@ int main() {
 		CloseHandle(hThread);
 		exit("Couldn't schedule the APC function on the specified thread.");
 	}
-	msg("Scheduled malicious APC in target thread. Awaiting shellcode execution...");
+	msg("Scheduled malicious APC in target thread. Awaiting shellcode executionk & completion...");
 
 	/* Cleanup */
 	WaitForSingleObject(hThread, INFINITE);
 	CloseHandle(hThread);
-	msg("Shellcode executed. Quitting.");
+	msg("Shellcode execution completed. Quitting.");
 
 	return 0;
 }

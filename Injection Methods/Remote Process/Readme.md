@@ -30,7 +30,7 @@ HANDLE OpenProcess(
 
 Used to acquire a handle to the target process. The handle acts as a reference to the process in other API calls which modify the process. The **dwDesiredAccess** parameter specifies the access rights to open the handle with. At a minimum, you will need to specifiy **PROCESS_VM_OPERATION**, **PROCESS_VM_READ** & **PROCESS_VM_WRITE**. Further reading about access rights can be found [here](https://learn.microsoft.com/en-us/windows/win32/procthread/process-security-and-access-rights).
 
-> [!CRITICAL]
+> [!CAUTION]
 > Specifying **PROCESS_ALL_ACCESS** can be a flag for some EDR's. It's best to call the handle with the minimum rights required for injection.
 
 #### [VirtualAllocEx](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualallocex)
@@ -46,7 +46,7 @@ LPVOID VirtualAllocEx(
 
 Used for allocating memory in the target process. This memory will hold the shellcode. The **flAllocationType** parameter will specify the initial permissions for the memory block. Using **PAGE_READWRITE** will allow the shellcode to be written to the memory block.
 
-> [!CRITICAL]
+> [!CAUTION]
 > Specifying **PAGE_EXECUTE_READWRITE** for the memory protection will be a flag for EDR's. It's safer to use the minimum required permissions & change permissions with **VirtualProtectEx** as necessary.
 
 #### [WriteProcessMemory](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-writeprocessmemory)

@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Alertable Thread", "Injecti
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CreateRemoteThread", "Injection Methods\Remote Process\CreateRemoteThread\data\CreateRemoteThread.vcxproj", "{FBD5CA88-0DFC-4D26-9662-82E84A1620B5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Fibers", "Injection Methods\Local Process\Fibers\data\Fibers.vcxproj", "{D91FDA76-BD2C-43BD-9CCB-62CB1BE80BFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Release|x64 = Release|x64
@@ -59,6 +61,10 @@ Global
 		{FBD5CA88-0DFC-4D26-9662-82E84A1620B5}.Release|x64.Build.0 = Release|x64
 		{FBD5CA88-0DFC-4D26-9662-82E84A1620B5}.Release|x86.ActiveCfg = Release|Win32
 		{FBD5CA88-0DFC-4D26-9662-82E84A1620B5}.Release|x86.Build.0 = Release|Win32
+		{D91FDA76-BD2C-43BD-9CCB-62CB1BE80BFB}.Release|x64.ActiveCfg = Release|x64
+		{D91FDA76-BD2C-43BD-9CCB-62CB1BE80BFB}.Release|x64.Build.0 = Release|x64
+		{D91FDA76-BD2C-43BD-9CCB-62CB1BE80BFB}.Release|x86.ActiveCfg = Release|Win32
+		{D91FDA76-BD2C-43BD-9CCB-62CB1BE80BFB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,5 +79,9 @@ Global
 		{C3FB25FD-61EE-4C59-92E4-E1872BBB4E3D} = {08DFF86B-19D7-4EDD-9A48-C8348D02D838}
 		{6060707A-4D2F-45EA-B26F-B3F69A92252F} = {08DFF86B-19D7-4EDD-9A48-C8348D02D838}
 		{FBD5CA88-0DFC-4D26-9662-82E84A1620B5} = {269CB137-AECD-412D-A16A-D27848560584}
+		{D91FDA76-BD2C-43BD-9CCB-62CB1BE80BFB} = {5152BD62-9343-41C1-A008-0AE2A4514114}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C52BB408-AB63-48E0-82B6-65ECE2C9ECD1}
 	EndGlobalSection
 EndGlobal

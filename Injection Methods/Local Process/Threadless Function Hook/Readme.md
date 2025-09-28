@@ -15,7 +15,7 @@ The initial hook is a 5 byte trampoline patch placed at the start of the target 
 
 The hook can be inserted within any function that has a memory hole within a 2GB range, up or down from the address of the target function. This limitation is due to the use of the call instruction with the hook, which expects a signed 32-bit function address. This means the call instruction can't acess anything beyond 2GB, up or down. For this reason, our shellcode loader & payload must be placed within a memory hole in this range.
 
-To ensure our shellcode is placed within this range, we'll need to calculate a predefined memory range based on the address of the function. This differs from typical execution method such as CreateThread which allows for allocation of the payload anywhere in memory.
+To ensure our shellcode is placed within this range, we'll need to calculate a predefined memory range based on the address of the function. This differs from typical execution methods such as CreateThread which allows for allocation of the payload anywhere in memory.
 
 #### Runtime Patching
 Before patching the target function with the hook, we'll need to patch the trampoline itself with the offset of the base address of the payload. This provides the call instruction with the address to execute. 
@@ -24,11 +24,11 @@ Before patching the target function with the hook, we'll need to patch the tramp
 The shellcode loader acts as a wrapper for our main shellcode, which is appended to this loader in the memory hole. The loader is a core component which is responsible for the following:
 
 1. Saving the arguments of the original function call
-2. Restoring the original bytes of the function call
+2. Restoring the original bytes of the function call (removing hook)
 3. Executing the shellcode
 4. Restoring the functions arguments & resuming execution
 
-These operations provide stability to the target & ensure it keeps running properly while our payload is executed in the background. The slide below has been pulled from the original [Needles without the Thread](https://github.com/CCob/ThreadlessInject/blob/master/Needles%20without%20the%20Thread.pptx) powerpoint which describes the shellcode.
+These operations provide stability to the target & ensure it keeps running properly while our payload is executed in the background. The slide below has been pulled from the original [Needles without the Thread](https://github.com/CCob/ThreadlessInject/blob/master/Needles%20without%20the%20Thread.pptx) powerpoint which describes the shellcode loader.
 
 <details>
 <summary>Click to show image</summary>
@@ -36,13 +36,10 @@ These operations provide stability to the target & ensure it keeps running prope
 ![hook-code](data/hook-code.png)
 </details>
 
-#### Runtime Patching
-At runtime, we'll need to save the original bytes from the target function to this shellcode loader so it knows the original bytes required by the function when removing the hook. 
-
 ###### Slide 11 from Needles without the Thread
 
 #### Runtime Patching
-At runtime, we'll need to patch the shellcode loader with the first 8 original bytes of the function. This ensures the loader can remove the hook from the target function, restoring original functionality.
+At runtime, we'll need to save the original bytes from the target function to this shellcode loader so it knows the original bytes required by the function when removing the hook. 
 
 ## Injection Procedure
 This section describes the steps taken by the **threadless.c** program to execute shellcode locally using the threadless function hooking method.
@@ -53,7 +50,7 @@ This section describes the steps taken by the **threadless.c** program to execut
 
 3. Prepare for hook installation by copying the first 8 bytes of the target function to the shellcode loader.
 
-4. Patch the call operation in the hook with an offset to the beginning of the memory hole (our loader & payload). Install this hook in the target function.
+4. Patch the call operation in the 5 byte trampoline with a 4 byte offset to the beginning of the memory hole (our loader & payload). Install this hook in the target function.
 
 5. Write the shellcode loader & main shellcode to the memory hole.
 > [!IMPORTANT]
@@ -143,9 +140,9 @@ Executing this instruction brings us to our initial trampoline in the function.
 
 When we execute the trampoline, we're brought to the beginning of the shellcode. The initial shellcode performs the following actions before executing the shellcode.
 - Calculates the original base address of the hooked function by subtracting the trampoline size
-- Saves the parameters which the callee gave to the hooked function
+- Saves the parameters which the caller gave to the hooked function
 - Restores the original bytes overwritten by the trampoline to the hooked function, unhooking the function.
-- Create shadow space for shellcode parameters
+- Create shadow space for shellcode
 
 ![loader-prologue](data/loader-prologue.png)
 ###### Running the loader up to shellcode execution instructions
@@ -153,14 +150,17 @@ When we execute the trampoline, we're brought to the beginning of the shellcode.
 Finally, we can call the shellcode. This shellcode executes a calculator. The call instruction in the loader is a hardcoded address which jumps to the base of the main shellcode, at the end of the loader.
 
 ![executing-shellcode](data/executing-shellcode.png)
+###### Running the call instruction on the shellcode to launch calculator
 
 Now it's time for the loader to cleanup this mess & restore original functionality to the initial function call so the program can resume normally as though we didn't just hack & wack it to bits. The loader epilogue will perform the following operations:
 - Restore the shadow space created for the function call
-- Restore the parameters in which the original caller called the hooked function with
+- Restore the parameters in which the caller called the hooked function with
 - Jump back to start of the hooked function which had its original bytes restored in the loader prologue.
 
 ![loader-epilogue](data/loader-epilog.png)
+###### Running through the rest of the loader code after main payload execution
 
 Since the hook had a clean insertion & removal technique, our shellcode has executed while allowing the function to continue running normally.
 
 ![clean-exit](data/clean-exit.png)
+###### Complete execution of the program with clean exit

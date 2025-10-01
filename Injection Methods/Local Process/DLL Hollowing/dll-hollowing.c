@@ -131,7 +131,8 @@ int main()
 	/*
 		Step 2: Map the target dll to memory using syscalls. There are issues with using standard CreateFileMapping/MapViewOfFile API's
 			    when setting memory permissions to (RWX) outside of whats available for handle. Access permission error 5 appears on each call.
-				Using syscalls avoids this, allowing us to allocate & manipulate RWX memory. 
+				Using syscalls avoids this, allowing us to allocate & manipulate RWX memory. LoadLibrary & VirtualProtect seem to work however.
+                This is likely due to the file handle received from CreateFileW not having anything other than read permissions from user context.
 	*/
 	if ( ( Status = NtCreateSection( &hSection, SECTION_ALL_ACCESS, 0, 0, PAGE_READONLY, SEC_IMAGE, hFile2 ) ) != 0x0 )
 	{
@@ -142,6 +143,9 @@ int main()
 	{
 		ntapi_ferror( "NtMapViewOfSection", Status, "Could not map %s to the image section", FileData.cFileName );
 	}
+    /* Standard win32 loadlibrary & virtualprotect calls */
+	// pTargetDll = LoadLibrary( FileData.cFileName );
+	// VirtualProtect( pTargetDll, ( size_t )NtHeader->OptionalHeader.SizeOfImage, PAGE_EXECUTE_READWRITE, &ulOldProtection );
 
 	/* 
 		Step 3: Locate the entry point of the newly loaded dll 

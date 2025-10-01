@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Threadless", "Injection Met
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Threadless-Remote-Function-Hook", "Injection Methods\Remote Process\Threadless-Remote-Function-Hook\data\Threadless-Remote-Function-Hook.vcxproj", "{8718E108-9CDD-4316-8E9F-DC1027FE456D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DLL Hollowing", "Injection Methods\Local Process\DLL Hollowing\data\DLL Hollowing.vcxproj", "{41004015-77DF-465A-8D9A-806E8466844C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Release|x64 = Release|x64
@@ -77,6 +79,10 @@ Global
 		{8718E108-9CDD-4316-8E9F-DC1027FE456D}.Release|x64.Build.0 = Release|x64
 		{8718E108-9CDD-4316-8E9F-DC1027FE456D}.Release|x86.ActiveCfg = Release|Win32
 		{8718E108-9CDD-4316-8E9F-DC1027FE456D}.Release|x86.Build.0 = Release|Win32
+		{41004015-77DF-465A-8D9A-806E8466844C}.Release|x64.ActiveCfg = Release|x64
+		{41004015-77DF-465A-8D9A-806E8466844C}.Release|x64.Build.0 = Release|x64
+		{41004015-77DF-465A-8D9A-806E8466844C}.Release|x86.ActiveCfg = Release|Win32
+		{41004015-77DF-465A-8D9A-806E8466844C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +100,7 @@ Global
 		{D91FDA76-BD2C-43BD-9CCB-62CB1BE80BFB} = {5152BD62-9343-41C1-A008-0AE2A4514114}
 		{350010B5-E1DC-467D-ADEC-086A0C6376FA} = {5152BD62-9343-41C1-A008-0AE2A4514114}
 		{8718E108-9CDD-4316-8E9F-DC1027FE456D} = {269CB137-AECD-412D-A16A-D27848560584}
+		{41004015-77DF-465A-8D9A-806E8466844C} = {5152BD62-9343-41C1-A008-0AE2A4514114}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C52BB408-AB63-48E0-82B6-65ECE2C9ECD1}

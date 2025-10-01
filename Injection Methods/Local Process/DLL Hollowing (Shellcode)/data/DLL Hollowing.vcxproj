@@ -24,6 +24,7 @@
     <ProjectGuid>{41004015-77df-465a-8d9a-806e8466844c}</ProjectGuid>
     <RootNamespace>DLLHollowing</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>DLL Hollowing Shellcode</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

@@ -129,10 +129,10 @@ int main()
 	while ( FindNextFileW( hFile, &FileData ) );
 
 	/*
-		Step 2: Map the target dll to memory using syscalls. There are issues with using standard CreateFileMapping/MapViewOfFile API's
+		Step 2: Map the target dll to memory using syscalls to bypass CFG. There are issues with using standard CreateFileMapping/MapViewOfFile API's
 			    when setting memory permissions to (RWX) outside of whats available for handle. Access permission error 5 appears on each call.
-				Using syscalls avoids this, allowing us to allocate & manipulate RWX memory. LoadLibrary & VirtualProtect seem to work however.
-                This is likely due to the file handle received from CreateFileW not having anything other than read permissions from user context.
+				Using syscalls avoids this, allowing us to allocate & manipulate RWX memory. This is likely due to the file handle received from 
+                CreateFileW not having anything other than read permissions from user context. LoadLibrary & VirtualProtect seem work however.
 	*/
 	if ( ( Status = NtCreateSection( &hSection, SECTION_ALL_ACCESS, 0, 0, PAGE_READONLY, SEC_IMAGE, hFile2 ) ) != 0x0 )
 	{

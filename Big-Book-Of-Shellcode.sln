@@ -31,9 +31,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Threadless", "Injection Met
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Threadless-Remote-Function-Hook", "Injection Methods\Remote Process\Threadless-Remote-Function-Hook\data\Threadless-Remote-Function-Hook.vcxproj", "{8718E108-9CDD-4316-8E9F-DC1027FE456D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DLL Hollowing", "Injection Methods\Local Process\DLL Hollowing (Shellcode)\data\DLL Hollowing.vcxproj", "{41004015-77DF-465A-8D9A-806E8466844C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DLL Hollowing Shellcode", "Injection Methods\Local Process\DLL Hollowing (Shellcode)\data\DLL Hollowing.vcxproj", "{41004015-77DF-465A-8D9A-806E8466844C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DLL-Hollowing-(Shellcode)", "Injection Methods\Remote Process\DLL-Hollowing-(Shellcode)\data\DLL-Hollowing-(Shellcode).vcxproj", "{1BBC9129-B02D-4285-AED9-E4A9242E53D0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DLL Hollowing Shellcode", "Injection Methods\Remote Process\DLL-Hollowing-(Shellcode)\data\DLL-Hollowing-(Shellcode).vcxproj", "{1BBC9129-B02D-4285-AED9-E4A9242E53D0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DLL Hollowing PE", "Injection Methods\Local Process\DLL Hollowing PE\data\DLL Hollowing PE.vcxproj", "{65E17E16-6632-46B5-8F6D-F0A90DE51AB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +91,10 @@ Global
 		{1BBC9129-B02D-4285-AED9-E4A9242E53D0}.Release|x64.Build.0 = Release|x64
 		{1BBC9129-B02D-4285-AED9-E4A9242E53D0}.Release|x86.ActiveCfg = Release|Win32
 		{1BBC9129-B02D-4285-AED9-E4A9242E53D0}.Release|x86.Build.0 = Release|Win32
+		{65E17E16-6632-46B5-8F6D-F0A90DE51AB8}.Release|x64.ActiveCfg = Release|x64
+		{65E17E16-6632-46B5-8F6D-F0A90DE51AB8}.Release|x64.Build.0 = Release|x64
+		{65E17E16-6632-46B5-8F6D-F0A90DE51AB8}.Release|x86.ActiveCfg = Release|Win32
+		{65E17E16-6632-46B5-8F6D-F0A90DE51AB8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +114,7 @@ Global
 		{8718E108-9CDD-4316-8E9F-DC1027FE456D} = {269CB137-AECD-412D-A16A-D27848560584}
 		{41004015-77DF-465A-8D9A-806E8466844C} = {5152BD62-9343-41C1-A008-0AE2A4514114}
 		{1BBC9129-B02D-4285-AED9-E4A9242E53D0} = {269CB137-AECD-412D-A16A-D27848560584}
+		{65E17E16-6632-46B5-8F6D-F0A90DE51AB8} = {5152BD62-9343-41C1-A008-0AE2A4514114}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C52BB408-AB63-48E0-82B6-65ECE2C9ECD1}

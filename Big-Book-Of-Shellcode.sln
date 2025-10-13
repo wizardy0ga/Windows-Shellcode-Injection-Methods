@@ -37,6 +37,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DLL Hollowing Shellcode", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DLL Hollowing PE", "Injection Methods\Local Process\DLL Hollowing PE\data\DLL Hollowing PE.vcxproj", "{65E17E16-6632-46B5-8F6D-F0A90DE51AB8}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Process Hollowing", "Injection Methods\Remote Process\Process Hollowing\data\Process Hollowing.vcxproj", "{FDE9C99E-3659-4822-8D6B-020C56FDD002}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Release|x64 = Release|x64
@@ -95,6 +97,10 @@ Global
 		{65E17E16-6632-46B5-8F6D-F0A90DE51AB8}.Release|x64.Build.0 = Release|x64
 		{65E17E16-6632-46B5-8F6D-F0A90DE51AB8}.Release|x86.ActiveCfg = Release|Win32
 		{65E17E16-6632-46B5-8F6D-F0A90DE51AB8}.Release|x86.Build.0 = Release|Win32
+		{FDE9C99E-3659-4822-8D6B-020C56FDD002}.Release|x64.ActiveCfg = Release|x64
+		{FDE9C99E-3659-4822-8D6B-020C56FDD002}.Release|x64.Build.0 = Release|x64
+		{FDE9C99E-3659-4822-8D6B-020C56FDD002}.Release|x86.ActiveCfg = Release|Win32
+		{FDE9C99E-3659-4822-8D6B-020C56FDD002}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +121,7 @@ Global
 		{41004015-77DF-465A-8D9A-806E8466844C} = {5152BD62-9343-41C1-A008-0AE2A4514114}
 		{1BBC9129-B02D-4285-AED9-E4A9242E53D0} = {269CB137-AECD-412D-A16A-D27848560584}
 		{65E17E16-6632-46B5-8F6D-F0A90DE51AB8} = {5152BD62-9343-41C1-A008-0AE2A4514114}
+		{FDE9C99E-3659-4822-8D6B-020C56FDD002} = {269CB137-AECD-412D-A16A-D27848560584}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C52BB408-AB63-48E0-82B6-65ECE2C9ECD1}

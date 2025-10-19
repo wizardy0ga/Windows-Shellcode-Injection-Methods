@@ -3,4 +3,7 @@
   <ItemGroup>
     <ClCompile Include="..\process-hollowing.c" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\Process Ghosting\definitions.h" />
+  </ItemGroup>
 </Project>

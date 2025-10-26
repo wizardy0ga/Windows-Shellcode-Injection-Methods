@@ -41,9 +41,9 @@ int main ( int argc, char* argv[] )
 	PIMAGE_NT_HEADERS			 PayloadNtHeader  = { 0 };
 	PEB							 RemotePeb = { 0 };
 
-	if ( argc != 3 )
+	if ( argc != 2 )
 	{
-		printf( "[-] USAGE: %s <path/to/payload.exe> <path/to/legitimate.exe & arguments>\n", argv[0] );
+		printf( "[-] USAGE: %s <path/to/payload.exe>\n", argv[0] );
 		return -1;
 	}
 	pPayloadFilename = argv[1];

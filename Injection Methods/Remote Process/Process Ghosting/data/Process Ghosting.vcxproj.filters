@@ -3,4 +3,7 @@
   <ItemGroup>
     <ClCompile Include="..\process-ghosting.c" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\definitions.h" />
+  </ItemGroup>
 </Project>

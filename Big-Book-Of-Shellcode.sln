@@ -43,7 +43,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Process Ghosting", "Injecti
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ghostly Hollowing", "Injection Methods\Remote Process\Ghostly Hollowing\data\Ghostly Hollowing.vcxproj", "{EBD071CF-727D-4B23-91FA-979BF4E2F9E3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Process Herpaderping", "Injection Methods\Remote Process\Process Herpaderping\Process Herpaderping.vcxproj", "{9A9C2413-72D8-4555-8466-A178D7D6E791}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Process Herpaderping", "Injection Methods\Remote Process\Process Herpaderping\data\Process Herpaderping.vcxproj", "{9A9C2413-72D8-4555-8466-A178D7D6E791}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

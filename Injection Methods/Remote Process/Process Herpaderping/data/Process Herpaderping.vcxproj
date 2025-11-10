@@ -123,10 +123,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="definitions.h" />
+    <ClInclude Include="../definitions.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="process-herpaderping.c" />
+    <ClCompile Include="../process-herpaderping.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -45,6 +45,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ghostly Hollowing", "Inject
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Process Herpaderping", "Injection Methods\Remote Process\Process Herpaderping\data\Process Herpaderping.vcxproj", "{9A9C2413-72D8-4555-8466-A178D7D6E791}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Herpaderply Hollowing", "Injection Methods\Remote Process\Herpaderply Hollowing\data\Herpaderply Hollowing.vcxproj", "{1188FBB0-3732-4577-9B0F-6DB126E5A0D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Release|x64 = Release|x64
@@ -119,6 +121,10 @@ Global
 		{9A9C2413-72D8-4555-8466-A178D7D6E791}.Release|x64.Build.0 = Release|x64
 		{9A9C2413-72D8-4555-8466-A178D7D6E791}.Release|x86.ActiveCfg = Release|Win32
 		{9A9C2413-72D8-4555-8466-A178D7D6E791}.Release|x86.Build.0 = Release|Win32
+		{1188FBB0-3732-4577-9B0F-6DB126E5A0D5}.Release|x64.ActiveCfg = Release|x64
+		{1188FBB0-3732-4577-9B0F-6DB126E5A0D5}.Release|x64.Build.0 = Release|x64
+		{1188FBB0-3732-4577-9B0F-6DB126E5A0D5}.Release|x86.ActiveCfg = Release|Win32
+		{1188FBB0-3732-4577-9B0F-6DB126E5A0D5}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -143,6 +149,7 @@ Global
 		{622347E1-D269-424D-9A9F-21EAC84440EC} = {269CB137-AECD-412D-A16A-D27848560584}
 		{EBD071CF-727D-4B23-91FA-979BF4E2F9E3} = {269CB137-AECD-412D-A16A-D27848560584}
 		{9A9C2413-72D8-4555-8466-A178D7D6E791} = {269CB137-AECD-412D-A16A-D27848560584}
+		{1188FBB0-3732-4577-9B0F-6DB126E5A0D5} = {269CB137-AECD-412D-A16A-D27848560584}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C52BB408-AB63-48E0-82B6-65ECE2C9ECD1}

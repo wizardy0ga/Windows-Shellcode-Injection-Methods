@@ -29,7 +29,7 @@ int main() {
 	HANDLE hThread	= 0;
 
 	/* Create the thread pointing at the shellcode in the text section */
-	if ((hThread = CreateThread(0, 0, (LPTHREAD_START_ROUTINE)shellcode, 0, 0, 0)) == NULL) {
+	if ((hThread = CreateThread(0, 0, (LPTHREAD_START_ROUTINE)shellcode, 0, 0, &ThreadId)) == NULL) {
 		printf("Failed to execute shellcode. Error: %d\n", GetLastError());
 		return -1;
 	}

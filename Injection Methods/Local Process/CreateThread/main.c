@@ -40,6 +40,6 @@ int main() {
 	WaitForSingleObject(hThread, INFINITE);
 
 	CloseHandle(hThread);
-
+    printf("Clean exit!");
 	return 0;
 }
